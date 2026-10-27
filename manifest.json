@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "FacebookSwift v34.0 — 3-Room Physics & Math Bulk + Single & Story Downloader",
+  "version": "34.0.0",
+  "minimum_chrome_version": "109",
+  "description": "Exact InstaSwift 3-Room Engine for Facebook: 1) Scan All Posts/Photos 2) Scan All Reels 3) FNV-1a Dedup -> 10x Bulk Download in Background.",
+  "permissions": [
+    "downloads",
+    "storage",
+    "activeTab",
+    "tabs",
+    "alarms",
+    "offscreen"
+  ],
+  "host_permissions": [
+    "https://*.facebook.com/*",
+    "https://*.fbcdn.net/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/*", "https://web.facebook.com/*"],
+      "js": ["interceptor.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://www.facebook.com/*", "https://web.facebook.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "FacebookSwift v34.0"
+  }
+}

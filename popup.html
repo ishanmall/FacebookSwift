@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body { width: 315px; margin: 0; padding: 16px; background: #121214; color: #f4f4f5; font-family: -apple-system, sans-serif; }
+    h2 { margin: 0 0 4px 0; font-size: 16px; color: #0866ff; }
+    p.sub { margin: 0 0 12px 0; font-size: 11px; color: #a1a1aa; }
+    .status-line { font-size: 12px; color: #38bdf8; margin-bottom: 12px; padding: 8px; background: #1f1f23; border-radius: 6px; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 10px; }
+    .card { background: #1f1f23; padding: 8px 4px; border-radius: 8px; text-align: center; }
+    .card strong { display: block; font-size: 14px; }
+    .card span { font-size: 9px; color: #a1a1aa; }
+    button { width: 100%; padding: 9px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; background: linear-gradient(135deg, #0866ff, #00c6ff); color: white; margin-bottom: 8px; }
+    button.single-btn { background: linear-gradient(135deg, #2563eb, #9333ea); }
+  </style>
+</head>
+<body>
+  <h2>⚡ FacebookSwift v34.0</h2>
+  <p class="sub">Sec 1: Posts • Sec 2: Reels • Sec 3: Dups + Bulk Engine</p>
+  <div class="status-line" id="p-status">Status: Idle</div>
+  <div class="stats">
+    <div class="card"><strong id="p-grid">0</strong><span>Sec 1: Posts</span></div>
+    <div class="card"><strong id="p-reels">0</strong><span>Sec 2: Reels</span></div>
+    <div class="card"><strong id="p-dups">0</strong><span>Sec 3: Dups</span></div>
+  </div>
+  <div class="stats">
+    <div class="card"><strong id="p-scanned">0</strong><span>Total Unique</span></div>
+    <div class="card"><strong id="p-downloaded">0</strong><span>Saved</span></div>
+    <div class="card"><strong id="p-speed">0/s</strong><span>Velocity</span></div>
+  </div>
+  <button id="p-single-trigger" class="single-btn">🎬 Download This Particular Video / Post</button>
+  <button id="p-trigger">⚡ Download All (Full Profile)</button>
+  <script src="popup.js"></script>
+</body>
+</html>
